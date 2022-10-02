@@ -1,0 +1,51 @@
+{
+    "name": "@pyk/typescript-esm-cjs",
+    "version": "1.0.0",
+    "description": "Example of ECMAScript and CommonJS library in TypeScript",
+    "main": "dist/cjs/index.js",
+    "source": "src/index.ts",
+    "types": "dist/cjs/index.d.ts",
+    "license": "MIT",
+    "homepage": "https://pyk.sh/tutorials/how-to-create-ecmascript-and-commonjs-library-with-typescript/",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pyk/typescript-esm-cjs.git"
+    },
+    "bugs": {
+        "url": "https://github.com/pyk/typescript-esm-cjs/issues"
+    },
+    "author": {
+        "name": "pyk",
+        "email": "gm@pyk.sh",
+        "url": "https://github.com/pyk"
+    },
+    "keywords": [
+        "ecmascript",
+        "esm",
+        "commonjs",
+        "cjs",
+        "typescript"
+    ],
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./dist/esm/index.d.ts",
+                "default": "./dist/esm/index.js"
+            },
+            "require": {
+                "types": "./dist/cjs/index.d.ts",
+                "default": "./dist/cjs/index.js"
+            }
+        }
+    },
+    "scripts": {
+        "build:esm": "tsc -p tsconfig.esm.json",
+        "build:cjs": "tsc -p tsconfig.cjs.json"
+    },
+    "prettier": "@pyk/prettier-config",
+    "devDependencies": {
+        "@pyk/prettier-config": "1.0.1",
+        "prettier": "2.7.1",
+        "typescript": "4.8.4"
+    }
+}
